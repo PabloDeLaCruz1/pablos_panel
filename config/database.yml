@@ -82,4 +82,5 @@ production:
   <<: *default
   database: pablos_panel_production
   username: pablos_panel
-  password: <%= ENV['TWITTER_CLONE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['PABLOS_PANEL_DATABASE_PASSWORD'] %>
+  
