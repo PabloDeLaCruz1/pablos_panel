@@ -1,1 +1,9 @@
 <h1>Hello, Rails!</h1>
+
+<%= link_to('please work', {:action => 'index', :page=>3, :id=>30})%>
+<br>
+id: <%= @id %>
+<br>
+id: <%= params[:id] %>
+<br>
+page: <%= @page.to_i + 2%>
