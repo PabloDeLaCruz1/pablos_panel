@@ -1,0 +1,27 @@
+<h1>hello from students index</h1>
+<table class="posts">
+        <thead>
+            <tr>
+                <th class="first_name">First Name</th>
+                <th class="last_name">Last Name</th>
+                <th class="age">Age</th>
+                <th class="education">Education</th>
+                <th>Show</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+    <% @students.each do |student| %>
+        <tbody>
+            <tr class="students_table">
+                <td> <%= student.first_name %> </td>
+                <td> <%= student.last_name %> </td>
+                <td> <%= student.age %> </td>
+                <td> <%= student.education %> </td>
+                <td> <a href="/students/<%= student.id %>"><i class="material-icons md-25">perm_identity</i></a></td>
+                <td> <a href="/students/<%= student.id %>/edit"><i class="material-icons md-25">edit</i></a></td>
+                <td> <a href="/students/<%= student.id %>/delete"><i class="material-icons md-25">delete_forever</i></a></td>
+            </tr>
+        </tbody>
+    <% end %>
+</table>

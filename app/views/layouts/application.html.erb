@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Home</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="<%= students_path %>">Students</a></li>
+          <li><a href="<%= courses_path %>">Courses</a></li>
+          <li><a href="<%= cohorts_path %>">Cohorts</a></li>
+
+        </ul>
+      </div>
+    </nav>
+
     <%= yield %>
+    
   </body>
 </html>

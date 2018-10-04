@@ -1,0 +1,7 @@
+giraffe, 10, male, 320
+elephant, 7, female, 200
+kangaroo, 10, female, 400
+pigeon, 1, male, 10
+bear, 6, male, 700
+monkey, 2, female, 30
+hippo, 7, male, 400

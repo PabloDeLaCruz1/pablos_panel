@@ -1,5 +1,6 @@
 class CohortsController < ApplicationController
   def index
+    @cohorts = Cohort.order(:position)
   end
 
   def create
@@ -18,5 +19,9 @@ class CohortsController < ApplicationController
   end
 
   def new
+  end
+
+  def cohorts_params
+    params.require(:cohort).permit(:name, :start_date, :end_date, :instructor, :students)
   end
 end

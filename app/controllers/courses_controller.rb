@@ -19,4 +19,8 @@ class CoursesController < ApplicationController
 
   def new
   end
+
+  def course_params
+    params.require(:course).permit(:name, :total_hours)
+  end
 end
