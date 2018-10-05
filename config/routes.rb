@@ -1,34 +1,16 @@
 Rails.application.routes.draw do
-  # get "courses/index"
-  # get "courses/create"
-  # get "courses/update"
-  # get "courses/destroy"
-  # get "courses/show"
-  # get "courses/edit"
-  # get "courses/new"
-  # get "cohorts/index"
-  # get "cohorts/create"
-  # get "cohorts/update"
-  # get "cohorts/destroy"
-  # get "cohorts/show"
-  # get "cohorts/edit"
-  # get "cohorts/new"
-  # get "instructors/index"
-  # get "instructors/create"
-  # get "instructors/update"
-  # get "instructors/destroy"
-  # get "instructors/show"
-  # get "instructors/edit"
-  # get "instructors/new"
-  # get "students/index"
-  # get "students/create"
-  # get "students/update"
-  # get "students/destroy"
-  # get "students/show"
-  # get "students/edit"
-  # get "students/new"
+  get "sessions/new"
+  get "sessions/create"
+  get "sessions/destroy"
   get "welcome/index"
+
+  get "/login", to: "sessions#new", as: "login" #login_path, loging_url
+  post "/login", to: "sessions#create" #, as: "login"
+
+  get "/signup", to: "users#new", as: "signup"
+  delete "/logout", to: "sessions#destroy", as: "logout"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :students, :instructors, :cohorts, :courses
+  # resources :users, except: [:new]
   root "welcome#index"
 end

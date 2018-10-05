@@ -17,12 +17,25 @@
           <li><a href="<%= students_path %>">Students</a></li>
           <li><a href="<%= courses_path %>">Courses</a></li>
           <li><a href="<%= cohorts_path %>">Cohorts</a></li>
-
+          <% if current_user %>
+            <%= link_to "Logout", logout_path, method: :delete%>
+          <% else %>
+             <%= link_to "Login", login_path %>
+             <%= link_to "Signup", signup_path %>
+          <% end %>
         </ul>
       </div>
     </nav>
+    <% if flash[:notice]%>
+    <%= flash[:notice]%>
+              <% end %>
+
+   <% if flash[:alert]%>
+    <%= flash[:alert]%>
+              <% end %>
+
 
     <%= yield %>
-    
+
   </body>
 </html>
