@@ -1,23 +1,45 @@
-<%= form_with model: @student, url: students_path, local: true do |form| %>
-  <p>
-    <%= form.label :first_name %><br>
-    <%= form.text_field :first_name %>
-  </p>
-  <p>
-    <%= form.label :last_name %><br>
-    <%= form.text_field :last_name %>
-  </p>
-  <p>
-    <%= form.label :age %><br>
-    <%= form.text_field :age %>
-  </p>
-  <p>
-    <%= form.label :education %><br>
-    <%= form.text_field :education %>
-  </p>
- 
- 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <%= form_with model: @student, url: students_path, class: :col, local: true do |form| %>
+      <div class="col">
+        <div class="input-field col s12">
+          <p>
+            <%= form.label :first_name %><br>
+            <%= form.text_field :first_name %>
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-field col s12">
+          <p>
+            <%= form.label :last_name %><br>
+            <%= form.text_field :last_name %>
+          </p>
+        </div>
+      </div>
+        <div class="col">
+        <div class="input-field col s12">
+          <p>
+            <%= form.label :age %><br>
+            <%= form.text_field :age %>
+          </p>
+        </div>
+      </div>
+        <div class="col">
+        <div class="input-field col s12">
+          <p>
+            <%= form.label :education %><br>
+            <%= form.text_field :education %>
+        </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-field col s6">
+          <button class="btn btn-large btn-register waves-effect waves-effect2  waves-light deep-orange lighten-3" type="submit" > Add Student
+            <%= form.submit %>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

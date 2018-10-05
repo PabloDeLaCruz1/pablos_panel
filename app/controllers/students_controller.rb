@@ -1,14 +1,6 @@
 class StudentsController < ApplicationController
   def index
-    @students = Student.all
-  end
-
-  def new
-    @student = Student.new
-  end
-
-  def show
-    @student = current_student
+    @students = Student.all.sorted
   end
 
   def create
@@ -20,16 +12,37 @@ class StudentsController < ApplicationController
       redirect_to @student
     else
       flash[:info] = "Invalid student validation"
-      redirect_to @student
+      render "new"
     end
   end
 
   def update
-    @student = Student.update(student_params)
+    @student = current_student
+    if @student.update_attributes(student_params)
+    else
+      render "edit"
+    end
   end
 
+  def destroy
+  end
+
+  def show
+    @student = current_student
+  end
+
+  def edit
+    @student = current_student
+  end
+
+  def new
+    @student = Student.new
+  end
+
+  private
+
   def current_student
-    @current_student ||= Student.find(params[:user_id])
+    @current_student ||= Student.find(params[:id])
   end
 
   def student_params
