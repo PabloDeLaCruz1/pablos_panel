@@ -18,24 +18,24 @@
           <li><a href="<%= courses_path %>">Courses</a></li>
           <li><a href="<%= cohorts_path %>">Cohorts</a></li>
           <% if current_user %>
-            <%= link_to "Logout", logout_path, method: :delete%>
+            <%= link_to "Logout", logout_path, method: :delete %>
           <% else %>
-             <%= link_to "Login", login_path %>
-             <%= link_to "Signup", signup_path %>
+            <li> <%= link_to "Login", login_path %> </li> 
+             <li> <%= link_to "Signup", signup_path %> </li> 
           <% end %>
         </ul>
       </div>
     </nav>
-    <% if flash[:notice]%>
-    <%= flash[:notice]%>
-              <% end %>
+      <% if flash[:notice]%>
+        <%= flash[:notice]%>
+      <% end %>
 
-   <% if flash[:alert]%>
-    <%= flash[:alert]%>
-              <% end %>
+      <% if flash[:alert]%>
+        <%= flash[:alert]%>
+      <% end %>
 
 
     <%= yield %>
-
+<%# TODO add an ugly landing page with red background to trigger orlando. Should rediect to real landing page after a few seconds %>
   </body>
 </html>

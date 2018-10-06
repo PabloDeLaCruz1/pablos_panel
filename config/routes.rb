@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create" #, as: "login"
 
   get "/signup", to: "users#new", as: "signup"
+  post "/signup", to: "users#create"
+
   delete "/logout", to: "sessions#destroy", as: "logout"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :students, :instructors, :cohorts, :courses
-  # resources :users, except: [:new]
+  resources :users, except: [:new]
   root "welcome#index"
 end

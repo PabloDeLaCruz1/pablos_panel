@@ -1,30 +1,26 @@
 <div class="container">
-    <h1>Courses:</h1>
-   <a href="/courses/new" class="waves-effect waves-light btn indigo lighten-1"><i class="material-icons md-24 right">add_circle_outline</i>Add course</a>
-    
-
-    <table class="posts">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Total Hours</th>
-
-                    <th>Show</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-        <% @courses.each do |course| %>
-            <tbody>
-                <tr class="courses_table">
-                    <td> <%= course.name %> </td>
-                    <td> <%= course.total_hours %> </td>
-                    <td> <a href="/courses/<%= course.id %>"><i class="material-icons md-25">pageview</i></a></td>
-                    <td> <a href="/courses/<%= course.id %>/edit"><i class="material-icons md-25">edit</i></a></td>
-                    <td> <a href="/courses/<%= course.id %>" data-method="delete"><i class="material-icons md-25">delete_forever</i></a></td>
-                </tr>
-            </tbody>
-        <% end %>
-    </table>
-
+  <h1>Courses:</h1>
+  <a href="/courses/new" class="waves-effect waves-light btn indigo lighten-1"><i class="material-icons md-24 right">add_circle_outline</i>Add course</a>
+  <table class="posts">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Total Hours</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <% @courses.each do |course| %>
+      <tbody>
+        <tr class="courses_table">
+          <td> <%= course.name %> </td>
+          <td> <%= course.total_hours %> </td>
+          <td> <a href="/courses/<%= course.id %>"><i class="material-icons md-25">pageview</i></a></td>
+          <td> <a href="/courses/<%= course.id %>/edit"><i class="material-icons md-25">edit</i></a></td>
+          <td> <a href="/courses/<%= course.id %>" data-method="delete"><i class="material-icons md-25">delete_forever</i></a></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
 </div>
