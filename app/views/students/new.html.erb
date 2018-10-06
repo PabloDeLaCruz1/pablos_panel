@@ -17,7 +17,7 @@
           </p>
         </div>
       </div>
-        <div class="col">
+      <div class="col">
         <div class="input-field col s12">
           <p>
             <%= form.label :age %><br>
@@ -25,12 +25,17 @@
           </p>
         </div>
       </div>
-        <div class="col">
+      <div class="col">
         <div class="input-field col s12">
-          <p>
-            <%= form.label :education %><br>
-            <%= form.text_field :education %>
-        </p>
+          <%= form.label :education %><br>
+          <br>
+          <select name="education" class="browser-default">
+            <option value="" disable selected></option>
+            <option value="Highschool">Highschool</option>
+            <option value="College">College</option>
+            <option value="Masters">Masters</option>
+            <option value="Phd">Phd</option>
+          </select>
         </div>
       </div>
       <div class="col">

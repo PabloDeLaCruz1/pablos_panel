@@ -4,8 +4,6 @@ class StudentsController < ApplicationController
   end
 
   def create
-    # render plain: params[:student].inspect
-    # params[:students].inspect
     @student = Student.create(student_params)
 
     if @student.valid?
