@@ -12,6 +12,19 @@ $primary-color: #3f88c5;
 $secondary-color: #223333;
 $ternary-color: #f7f9f9;
 
+body {
+  background: #222;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://unsplash.it/1200/800/?random');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-fill-mode: rgba(0, 0, 0, 0.5);
+  height: 1500px;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  flex-direction: column;
+}
 .container {
     animation: showUp 0.5s cubic-bezier(0.18, 1.3, 1, 1) forwards;
     background: rgba(255, 255, 255, 0.8);
