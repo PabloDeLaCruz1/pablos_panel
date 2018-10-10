@@ -1,11 +1,6 @@
 class StudentsController < ApplicationController
   def index
     @students = Student.all.sorted
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @students }
-    end
   end
 
   def create
@@ -28,6 +23,13 @@ class StudentsController < ApplicationController
   end
 
   def destroy
+    @student = current_student
+    @student.destroy
+
+    respond_to do |format|
+      format.html { redirect_to students_path }
+      format.js { render "/students/delete.js.erb" }
+    end
   end
 
   def show
