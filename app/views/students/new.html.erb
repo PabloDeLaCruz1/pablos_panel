@@ -4,7 +4,7 @@
       <div class="col">
         <div class="input-field col s12">
           <p>
-            <%= form.label :first_name %><br>
+            <%= form.label :first_name %>
             <%= form.text_field :first_name %>
           </p>
         </div>
@@ -12,7 +12,7 @@
       <div class="col">
         <div class="input-field col s12">
           <p>
-            <%= form.label :last_name %><br>
+            <%= form.label :last_name %>
             <%= form.text_field :last_name %>
           </p>
         </div>
@@ -20,7 +20,7 @@
       <div class="col">
         <div class="input-field col s12">
           <p>
-            <%= form.label :age %><br>
+            <%= form.label :age %>
             <%= form.text_field :age %>
           </p>
         </div>
@@ -29,13 +29,7 @@
         <div class="input-field col s12">
           <%= form.label :education %><br>
           <br>
-          <select name="education" class="browser-default">
-            <option value="" disable selected></option>
-            <option value="Highschool">Highschool</option>
-            <option value="College">College</option>
-            <option value="Masters">Masters</option>
-            <option value="Phd">Phd</option>
-          </select>
+          <%= form.select(:education, options_for_select([['High School'], ['College'], ['Masters'], ['PHD']]), { include_blank: true }) %>
         </div>
       </div>
       <div class="col">
@@ -48,3 +42,4 @@
     <% end %>
   </div>
 </div>
+

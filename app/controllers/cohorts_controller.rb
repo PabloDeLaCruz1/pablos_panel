@@ -25,6 +25,13 @@ class CohortsController < ApplicationController
   end
 
   def destroy
+    @cohort = current_cohort
+    @cohort.destroy
+
+    respond_to do |format|
+      format.html { redirect_to cohorts_path }
+      format.js { render "/cohorts/delete.js.erb" }
+    end
   end
 
   def show

@@ -23,6 +23,13 @@ class InstructorsController < ApplicationController
   end
 
   def destroy
+    @instructor = current_instructor
+    @instructor.destroy
+
+    respond_to do |format|
+      format.html { redirect_to instructors_path }
+      format.js { render "/instructors/delete.js.erb" }
+    end
   end
 
   def show

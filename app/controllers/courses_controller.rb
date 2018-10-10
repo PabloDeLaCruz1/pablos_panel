@@ -25,6 +25,13 @@ class CoursesController < ApplicationController
   end
 
   def destroy
+    @course = current_course
+    @course.destroy
+
+    respond_to do |format|
+      format.html { redirect_to courses_path }
+      format.js { render "/courses/delete.js.erb" }
+    end
   end
 
   def show

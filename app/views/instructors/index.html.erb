@@ -16,7 +16,7 @@
                 </tr>
             </thead>
         <% @instructors.each do |instructor| %>
-            <tbody>
+            <tbody id="instructor<%= instructor.id %>">
                 <tr class="instructors_table">
                     <td> <%= instructor.first_name %> </td>
                     <td> <%= instructor.last_name %> </td>
@@ -24,7 +24,7 @@
                     <td> <%= instructor.education %> </td>
                     <td> <a href="/instructors/<%= instructor.id %>"><i class="material-icons md-25">perm_identity</i></a></td>
                     <td> <a href="/instructors/<%= instructor.id %>/edit"><i class="material-icons md-25">edit</i></a></td>
-                    <td> <a href="/instructors/<%= instructor.id %>" data-method="delete"><i class="material-icons md-25">delete_forever</i></a></td>
+                    <td> <%= link_to '<i class="material-icons">delete_forever</i>'.html_safe, instructor_path(id: instructor.id), method: :delete, remote: true %></td>
                 </tr>
             </tbody>
         <% end %>

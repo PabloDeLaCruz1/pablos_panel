@@ -15,7 +15,7 @@
       </tr>
     </thead>
     <% @cohorts.each do |cohort| %>
-      <tbody>
+      <tbody id="cohort<%= cohort.id %>">
         <tr class="table"></tr>
         <td> <%= cohort.name %> </td>
         <td> <%= cohort.start_date %> </td>
@@ -24,7 +24,7 @@
         <td> <%= cohort.end_date %> </td>
         <td> <a href="/cohorts/<%= cohort.id %>"><i class="material-icons md-25">pageview</i></a></td>
         <td> <a href="/cohorts/<%= cohort.id %>/edit"><i class="material-icons md-25">edit</i></a></td>
-        <td> <a href="/cohorts/<%= cohort.id %>" id="delete-item" data-method="delete"><i class="material-icons md-25">delete_forever</i></a></td>
+        <td> <%= link_to '<i class="material-icons">delete_forever</i>'.html_safe, cohort_path(id: cohort.id), method: :delete, remote: true %></td>
       </tr>
     </tbody>
   <% end %>
