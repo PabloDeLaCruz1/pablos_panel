@@ -1,11 +1,30 @@
-<h1>Hello, Rails!</h1>
-
-<%= link_to('please work', {:action => 'index', :page=>3, :id=>30})%>
-<%= link_to('Courses', courses_path, {:action => 'index', :page=>3, :id=>30})%>
-
-<br>
-id: <%= @id %>
-<br>
-id: <%= params[:id] %>
-<br>
-page: <%= @page.to_i + 2%>
+<div class="container">
+  <h1>Welcome <%=current_user.email %></h1>
+  <%= link_to('please work', {:action => 'index', :page=>3, :id=>30})%>
+  <%= link_to('Courses', courses_path, {:action => 'index', :page=>3, :id=>30})%>
+  <br>
+  <% @all.take(3).each do |feed| %>
+    <div class="col s12 m7">
+      <h2 class="header"><%= feed.class.table_name.slice(0..-2) %></h2>
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src="https://lorempixel.com/100/190/nature/6">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <table>
+              <% feed.attributes.each do |var| %>
+                <tr>
+                  <%= var[0] %>
+                </tr>
+                <tr>
+                  <%= var[1] %>
+                </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

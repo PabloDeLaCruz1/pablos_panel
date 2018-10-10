@@ -1,6 +1,6 @@
 class Course < ApplicationRecord
-  has_many :cohorts
-
+  # has_many :cohortcourses
+  # has_many :cohorts, :through => :cohortcourses, dependent: :destroy
   validates :total_hours, numericality: {greater_than_or_equal_to: 0}
 
   scope :visible, lambda { where(:visible => true) }

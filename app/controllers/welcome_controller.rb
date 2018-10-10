@@ -1,9 +1,7 @@
 class WelcomeController < ApplicationController
   def index
+    @all = (Course.all + Cohort.all + Student.all).sort_by(&:created_at)
 
-    # @array =[1,2,3,5]
-    # @id = params[:id]
-    # @page = params[:page]
-    
+    @user = current_user
   end
 end

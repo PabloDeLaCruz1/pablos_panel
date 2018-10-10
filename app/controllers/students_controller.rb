@@ -1,6 +1,11 @@
-  class StudentsController < ApplicationController
+class StudentsController < ApplicationController
   def index
     @students = Student.all.sorted
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @students }
+    end
   end
 
   def create

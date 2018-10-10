@@ -5,11 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag   'favicon.ico', :rel => 'icon', :type => "image/x-icon" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', :defer => 'defer' %>
+    <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper indigo darken-4">
         <a href="/" class="brand-logo">Home</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="<%= students_path %>">Students</a></li>
@@ -24,14 +26,14 @@
           <% end %>
         </ul>
       </div>
-    </nav>
-    <% if flash[:notice]%>
-      <%= flash[:notice]%>
-    <% end %>
-    <% if flash[:alert]%>
-      <%= flash[:alert]%>
-    <% end %>
-    <%= yield %>
-    <%# TODO add an ugly landing page with red background to trigger orlando. Should rediect to real landing page after a few seconds %>
-  </body>
-</html>
+      <% if flash[:notice]%>
+        <%= flash[:notice]%>
+      <% end %>
+      <% if flash[:alert]%>
+        <%= flash[:alert]%>
+      <% end %>
+      <br>
+      <%= yield %>
+      <%# TODO add an ugly landing page with red background to trigger orlando. Should rediect to real landing page after a few seconds %>
+    </body>
+  </html>
