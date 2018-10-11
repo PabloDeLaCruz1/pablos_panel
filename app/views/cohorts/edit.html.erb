@@ -1,2 +1,14 @@
-<h1>Cohorts#edit</h1>
-<p>Find me in app/views/cohorts/edit.html.erb</p>
+<div class="container">
+  <% provide(:title, "Edit Cohort") %>
+  <h1>Update this Cohort: <%= @cohort.name %></h1>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@cohort) do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.submit "Save changes", class: "waves-effect waves-light btn indigo lighten-1" %>
+      <% end %>
+    </div>
+  </div>
+</div>

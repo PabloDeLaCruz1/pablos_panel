@@ -1,30 +1,36 @@
 <div class="container">
-  <h1>Welcome <%=current_user.email %></h1>
-  <%= link_to('please work', {:action => 'index', :page=>3, :id=>30})%>
-  <%= link_to('Courses', courses_path, {:action => 'index', :page=>3, :id=>30})%>
-  <br>
-  <% @all.take(3).each do |feed| %>
+<% if current_user %>
+  <h2>Welcome <%= current_user.email %></h2>
+  <h3>Recent History:</h3>
+    
+  <% @all.take(10).each do |feed| %>
+    <% table_name = feed.class.table_name.slice(0..-2) %>
     <div class="col s12 m7">
-      <h2 class="header"><%= feed.class.table_name.slice(0..-2) %></h2>
+      <h4 class="header"><%= table_name.capitalize %></h4>
       <div class="card horizontal">
         <div class="card-image">
-          <img src="https://lorempixel.com/100/190/nature/6">
+          <%= image_tag( table_name+"_logo", size: "125") %>
         </div>
         <div class="card-stacked">
           <div class="card-content">
-            <table>
-              <% feed.attributes.each do |var| %>
-                <tr>
-                  <%= var[0] %>
-                </tr>
-                <tr>
-                  <%= var[1] %>
-                </tr>
-              <% end %>
+            <table id="history-table">
+              <tr>
+                <% feed.attributes.take(2).each do |var| %>
+                  <% p var %>
+                  <th>
+                    <%= var[0] %>
+                  </th>
+                  <td>
+                    <%= var[1] %>
+                  </td>
+                <% end %>
+              </tr>
             </table>
           </div>
         </div>
       </div>
     </div>
   <% end %>
+  <% else %>
+  <% end%>
 </div>

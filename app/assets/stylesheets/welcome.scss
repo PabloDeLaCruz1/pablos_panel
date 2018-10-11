@@ -2,12 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Roboto');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Roboto|Raleway');
 @import "materialize";
 @import "material_icons";
 
 $font-main: 'EB Garamond', serif;
-$font-secondary: 'Roboto', sans-serif;
+$font-secondary: 'Raleway', sans-serif;
 $primary-color: #3f88c5;
 $secondary-color: #223333;
 $ternary-color: #f7f9f9;
@@ -15,12 +15,12 @@ $ternary-color: #f7f9f9;
 body {
   background: #222;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://unsplash.it/1200/800/?random');
-  background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   height: 1200px;
   display: flex;
   flex-direction: column;
+  font-family: $font-secondary;
 }
 
 .container {
@@ -35,7 +35,7 @@ body {
   box-sizing: border-box;
   position: relative;
   color: #222;
-  font-display: $font-main;
+  font-family: $font-main;
 }
 
 // tr td {
@@ -55,4 +55,8 @@ tbody:nth-child(odd) {
 
 .brand-logo {
   padding-left: 20px !important;
+}
+
+#history-table {
+  color: black;
 }

@@ -1,24 +1,19 @@
-<% provide(:title, "Edit user") %>
-<h1>Update this Instructor</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@instructor) do |f| %>
-
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, class: 'form-control' %>
-
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, class: 'form-control' %>
-
-      <%= f.label :age %>
-      <%= f.text_field :age, class: 'form-control' %>
-
-      <%= f.label :education %>
-      <%= f.text_field :education, class: 'form-control' %>
-
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
-    <% end %>
-
+<div class="container">
+  <% provide(:title, "Edit user") %>
+  <h1>Update this Instructor: <%= @instructor.first_name + " " + @instructor.last_name %></h1>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@instructor) do |f| %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: 'form-control' %>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+        <%= f.label :age %>
+        <%= f.text_field :age, class: 'form-control' %>
+        <%= f.label :education %>
+        <%= f.text_field :education, class: 'form-control' %>
+        <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>

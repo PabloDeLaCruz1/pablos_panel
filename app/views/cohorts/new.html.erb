@@ -1,2 +1,53 @@
-<h1>Cohorts#new</h1>
-<p>Find me in app/views/cohorts/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <%= form_with model: @cohort, url: cohorts_path, class: :col, local: true do |form| %>
+      <div class="col">
+        <div class="input-field col s12">
+          <p>
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-field col s12">
+          <p>
+            <%= form.label :start_date %>
+            <%= form.text_field :start_date %>
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-field col s12">
+          <p>
+            <%= form.label :end_date %>
+            <%= form.text_field :end_date %>
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-field col s12">
+          <p>
+            <%= form.label :instructor %>
+            <%= form.text_field :instructor %>
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-field col s12">
+          <p>
+            <%= form.label :course %>
+            <%= form.text_field :course %>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <button class="waves-effect waves-light btn indigo lighten-1" type="submit" > Save
+            <%= form.submit " "%>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
