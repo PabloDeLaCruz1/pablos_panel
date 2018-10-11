@@ -81,6 +81,4 @@ test:
 production:
   <<: *default
   database: pablos_panel_production
-  username: pablos_panel
-  password: <%= ENV['PABLOS_PANEL_DATABASE_PASSWORD'] %>
   
