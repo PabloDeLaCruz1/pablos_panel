@@ -12,6 +12,7 @@ password: 123456
 
 * [Ruby on Rails](http://www.dropwizard.io/1.0.2/docs/) - Back-end Framework
 * [Sentry Raven](https://sentry.io/welcome/) - Error Logging 
+* [Heroku](https://www.heroku.com/) - Deployment
 
 
 ## Authors

@@ -1,35 +1,35 @@
 <div class="container">
   <div class="row">
-    <%= form_with model: @student, url: students_path, class: :col, local: true do |form| %>
+    <%= form_with model: @student, url: students_path, class: :col, local: true do |f| %>
       <div class="col l6">
         <div class="input-field col s12">
           <p>
-            <%= form.label :first_name %>
-            <%= form.text_field :first_name, placeholder: "John" %>
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, placeholder: "John" %>
           </p>
         </div>
       </div>
       <div class="col l6">
         <div class="input-field col s12">
           <p>
-            <%= form.label :last_name %>
-            <%= form.text_field :last_name, placeholder: "Doe" %>
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, placeholder: "Doe" %>
           </p>
         </div>
       </div>
       <div class="col l6">
         <div class="input-field col s12">
           <p>
-            <%= form.label :age %>
-            <%= form.text_field :age, placeholder: "21" %>
+            <%= f.label :age %>
+            <%= f.text_field :age, placeholder: "21" %>
           </p>
         </div>
       </div>
       <div class="col l6">
         <div class="input-field col s12">
           <p>
-            <%= form.label :education %>
-            <%= form.select(:education, options_for_select([['High School', "High School"], ['College', "College"], ['Masters', "Master"], ['PHD', "PHD"]]), { include_blank: true })  %>
+            <%= f.label :education %>
+            <%= f.select(:education, options_for_select([['High School', "High School"], ['College', "College"], ['Masters', "Master"], ['PHD', "PHD"]]), { include_blank: true })  %>
           </p>
         </div>
       </div>
@@ -38,7 +38,7 @@
       <div class="col l6">
         <div class="input-field col s6">
           <button class="waves-effect waves-light btn indigo lighten-1" type="submit" > Add Student
-            <%= form.submit " "%>
+            <%= f.submit " "%>
           </button>
         </div>
       </div>

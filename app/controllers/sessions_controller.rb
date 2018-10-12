@@ -10,8 +10,8 @@ class SessionsController < ApplicationController
 
       redirect_to @user
     else
-      flash.now.alert = "Incorrect email or password, try again."
-      render :new
+      flash[:alert] = "Incorrect email or password, try again."
+      redirect_to "/login"
     end
   end
 
