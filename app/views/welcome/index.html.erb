@@ -2,21 +2,18 @@
 <% if current_user %>
   <h2>Welcome <%= current_user.email %></h2>
   <h3>Recent History:</h3>
-    
   <% @all.take(10).each do |feed| %>
     <% table_name = feed.class.table_name.slice(0..-2) %>
     <div class="col s12 m7">
-      <h4 class="header"><%= table_name.capitalize %></h4>
       <div class="card horizontal">
         <div class="card-image">
-          <%= image_tag( table_name+"_logo", size: "125") %>
+          <%= image_tag( table_name+"_logo", width: "125", height: "142") %>
         </div>
         <div class="card-stacked">
           <div class="card-content">
             <table id="history-table">
               <tr>
                 <% feed.attributes.take(2).each do |var| %>
-                  <% p var %>
                   <th>
                     <%= var[0] %>
                   </th>

@@ -3,14 +3,22 @@
     - index.html.erb
     - show.html.erb
 -->
-<div style="margin-top: 20px;">
-  <strong>Email:</strong> <%= user.email %><br />
-  <strong>Password Digest:</strong> <%= user.password_digest %><br />
-  <strong>Created At:</strong> <%= user.created_at_formatted %><br />
-  <strong>Updated At:</strong> <%= user.updated_at_formatted %><br />
-
-  <!-- these links allow us to show, edit and delete a user -->
-  <%= link_to "Show User", user_path(user) %>
-  <%= link_to "Edit User", edit_user_path(user) %>
-  <%= link_to "Destroy User", user_path(user), method: :delete %>
-</div>
+<table class="posts">
+  <thead>
+    <tr>
+      <th class="admin_name">Admin Email</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody id="user<%= user.id %>">
+    <tr class="users_table">
+      <td><%= user.email %></td>
+      <br />
+      <td> <a href="/users/<%= user.id %>"><i class="material-icons md-25">perm_identity</i></a></td>
+      <td> <a href="/users/<%= user.id %>/edit"><i class="material-icons md-25">edit</i></a></td>
+      <td> <%= link_to '<i class="material-icons">delete_forever</i>'.html_safe, user_path(id: user.id), method: :delete, remote: true %></td>
+    </tr>
+  </tbody>
+</table>

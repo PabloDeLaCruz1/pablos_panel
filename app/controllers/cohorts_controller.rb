@@ -36,6 +36,7 @@ class CohortsController < ApplicationController
 
   def show
     @cohort = current_cohort
+    p @cohort.instructor
   end
 
   def edit
