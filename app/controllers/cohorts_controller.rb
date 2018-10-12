@@ -1,6 +1,9 @@
 class CohortsController < ApplicationController
+  before_action :authorize
+
   def index
     @cohorts = Cohort.all.sorted
+    puts "-----------------------------------"
   end
 
   def create
@@ -36,7 +39,6 @@ class CohortsController < ApplicationController
 
   def show
     @cohort = current_cohort
-    p @cohort.instructor
   end
 
   def edit

@@ -1,11 +1,14 @@
 <div class="container">
-<h1>Login</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
-<%= form_with scope: 'sessions', method: :post, url: login_path do |f| %>
+  <h1>Login</h1>
+  <%= form_with scope: 'sessions', method: :post, url: login_path do |f| %>
     <%= f.label :email%>
     <%= f.text_field :email%>
     <%= f.label :password%>
     <%= f.password_field :password%>
-    <%= f.submit %>
-<% end %>
+    <div class="col l6">
+      <div class="input-field col s6">
+        <%= f.submit "Login", class: "waves-effect waves-light btn indigo lighten-1 center" %>
+      </div>
+    </div>
+  <% end %>
 </div>

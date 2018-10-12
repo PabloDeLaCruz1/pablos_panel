@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorize, except: [:new]
+  before_action :authorize, except: [:new, :create]
   protect_from_forgery
 
   def index

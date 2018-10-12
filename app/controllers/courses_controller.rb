@@ -1,4 +1,6 @@
 class CoursesController < ApplicationController
+  before_action :authorize
+
   def index
     @courses = Course.all.sorted
   end
