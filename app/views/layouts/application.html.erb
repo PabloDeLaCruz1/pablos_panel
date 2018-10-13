@@ -16,11 +16,12 @@
           <%= image_tag("logo", width: "250vw", height: "64vh") %>
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="<%= students_path %>">Students</a></li>
-          <li><a href="<%= instructors_path %>">Instructors</a></li>
-          <li><a href="<%= courses_path %>">Courses</a></li>
-          <li><a href="<%= cohorts_path %>">Cohorts</a></li>
           <% if current_user %>
+            <li><a href="<%= users_path %>" id="welcome-nav">Welcome, <%= current_user.email%></a></li>
+            <li><a href="<%= students_path %>">Students</a></li>
+            <li><a href="<%= instructors_path %>">Instructors</a></li>
+            <li><a href="<%= courses_path %>">Courses</a></li>
+            <li><a href="<%= cohorts_path %>">Cohorts</a></li>
             <li> <%= link_to "Logout", logout_path, method: :delete %> </li>
           <% else %>
             <li> <%= link_to "Login", login_path %> </li>
